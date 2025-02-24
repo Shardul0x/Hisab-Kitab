@@ -11,7 +11,7 @@ const inter = Inter({
 
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ['latin'],
-  weight: ['400', '600'], // Ensure no leading space here
+  weight: ['400, 600 , 700'], // Ensure no leading space here
   variable: '--font-ibm-plex-serif'
 });
 
