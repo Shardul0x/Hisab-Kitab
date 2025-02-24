@@ -1,27 +1,26 @@
+export const dynamic = 'force-dynamic';
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , IBM_Plex_Serif} from "next/font/google";
+import { Inter, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({ 
   subsets: ["latin"], 
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-inter' 
 });
 
 const ibmPlexSerif = IBM_Plex_Serif({
-  variable: "--font-ibm-plex-serif",
-  weight: ["400" ," 700"],
-  subsets: ["latin"],
+  subsets: ['latin'],
+  weight: ['400', '700'], // Ensure no leading space here
+  variable: '--font-ibm-plex-serif'
 });
- 
 
 export const metadata: Metadata = {
-  title: "Hisaab Kitaab",
-  description: "Hisaab Kitaab is a simple accounting app", 
+  title: "Hisab-Kitab",
+  description: "Simplify Your Finances, Amplify Your Savings!",
+  icons: {
+    icon: '/icons/logo.svg'
+  }
 };
 
 export default function RootLayout({
@@ -31,9 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
         {children}
       </body>
     </html>
